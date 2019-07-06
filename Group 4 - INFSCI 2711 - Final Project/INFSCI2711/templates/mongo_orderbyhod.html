@@ -1,0 +1,23 @@
+{% extends "Base.html" %}
+{% block content %}
+<h2>Orders by Hour Of Day</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Time of Day</th>
+        <th>Quantity</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for quantity in orderbyhod %}
+    <tr>
+        <td>{{ quantity._id }}</td>
+        <td>{{ quantity.order_count }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+    <hr>
+    <p>Execution Time: {{ execution_time }}</p>
+{% endblock %}

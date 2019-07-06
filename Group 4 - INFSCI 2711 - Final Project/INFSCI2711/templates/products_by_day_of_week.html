@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Products By Day of Week</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Day of Week</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products_by_day_of_week %}
+            <tr>
+            <td>{{ product.DayOfWeek }}</td>
+            <td>{{ product.Name }}</td>
+            <td>{{ product.TotalQuantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <strong>Execution Time:</strong> {{ query_stat.duration * 1000 }} ms
+{% endblock %}

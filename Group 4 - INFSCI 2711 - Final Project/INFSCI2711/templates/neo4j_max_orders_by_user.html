@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Top 10 Users with most number of orders</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Total orders</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user_quantity in max_orders_by_user %}
+            <tr>
+            <td>{{ user_quantity.User_id }}</td>
+            <td>{{ user_quantity.Quantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Started streaming 10 records after 1 ms and completed after 5127 ms.</p>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Top 20 Aisle with maximum number of Products</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Aisle name</th>
+            <th>Product count</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in product_quantity_by_aisle %}
+            <tr>
+            <td>{{ order.Aisle }}</td>
+            <td>{{ order.Quantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Started streaming 20 records in less than 1 ms and completed after 48 ms.</p>
+{% endblock %}

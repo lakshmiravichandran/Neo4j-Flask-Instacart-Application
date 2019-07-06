@@ -1,0 +1,22 @@
+{% extends "Base.html" %}
+{% block content %}
+<h2>Top 20 Aisles having maximum products</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Aisle</th>
+        <th>Number of Orders</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for order in productbyaisle %}
+    <tr>
+        <td>{{ order._id }}</td>
+        <td>{{ order.product_count }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+    <hr>
+    <p>Execution Time: {{ execution_time }}</p>
+{% endblock %}

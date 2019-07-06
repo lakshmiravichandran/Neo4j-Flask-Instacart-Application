@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Quantity By Time Of Day</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Time of Day in hours</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for quantity in quantity_by_time_of_day %}
+            <tr>
+            <td>{{ quantity.TimeOfDayInHours }}</td>
+            <td>{{ quantity.salesAtHour }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Started streaming 24 records in less than 1 ms and completed after 1374 ms.</p>
+{% endblock %}

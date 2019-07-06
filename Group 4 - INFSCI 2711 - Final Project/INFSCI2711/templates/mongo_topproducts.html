@@ -1,0 +1,22 @@
+{% extends "Base.html" %}
+{% block content %}
+<h2>Top 20 Products</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in topproducts %}
+    <tr>
+        <td>{{ product._id }}</td>
+        <td>{{ product.product_count }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+    <hr>
+    <p>Execution Time: {{ execution_time }}</p>
+{% endblock %}

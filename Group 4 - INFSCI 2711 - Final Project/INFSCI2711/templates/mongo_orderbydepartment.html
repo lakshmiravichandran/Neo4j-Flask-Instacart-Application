@@ -1,0 +1,22 @@
+{% extends "Base.html" %}
+{% block content %}
+<h2>Order By Department</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Department Id</th>
+        <th>Total orders</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user_quantity in orderdepartments %}
+    <tr>
+        <td>{{ user_quantity._id }}</td>
+        <td>{{ user_quantity.product_count }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+    <hr>
+    <p>Execution Time: {{ execution_time }}</p>
+{% endblock %}

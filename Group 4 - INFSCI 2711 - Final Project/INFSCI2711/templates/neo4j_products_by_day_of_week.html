@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Product Vegetarians Buy</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Overlap</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products_by_day_of_week %}
+            <tr>
+                <td>{{ product["p.name"] }}</td>
+                <td>{{ product["overlap"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Started streaming 2181 records after 343 ms and completed after 346 ms, displaying first 1000 rows.</p>
+{% endblock %}

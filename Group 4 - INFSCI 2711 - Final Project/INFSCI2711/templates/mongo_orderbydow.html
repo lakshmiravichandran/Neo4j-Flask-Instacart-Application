@@ -1,0 +1,22 @@
+{% extends "Base.html" %}
+{% block content %}
+<h2>Orders By Day of Week</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Day of Week</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in productbydow %}
+    <tr>
+        <td>{{ product._id }}</td>
+        <td>{{ product.total_orders }}</td>
+        {% endfor %}
+    </tbody>
+</table>
+    <hr>
+    <p>Execution Time: {{ execution_time }}</p>
+{% endblock %}

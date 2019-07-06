@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Total Orders in each Department</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Department name</th>
+            <th>Total Orders</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders_by_department %}
+            <tr>
+            <td>{{ order.department_name }}</td>
+            <td>{{ order.Number_of_Orders }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Started streaming 21 records in less than 1 ms and completed after 1496 ms.</p>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Quantity By Time Of Day</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Time of Day</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for quantity in quantity_by_time_of_day %}
+            <tr>
+            <td>{{ quantity.TimeOfDay }}</td>
+            <td>{{ quantity.Quantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <strong>Execution Time:</strong> {{ query_stat.duration * 1000 }} ms
+{% endblock %}

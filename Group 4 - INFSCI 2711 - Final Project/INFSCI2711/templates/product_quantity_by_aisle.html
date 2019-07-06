@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Aisle by Number of Orders</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Aisle</th>
+            <th>Number of Orders</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in product_quantity_by_aisle %}
+            <tr>
+            <td>{{ order.Aisle }}</td>
+            <td>{{ order.Quantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <strong>Execution Time:</strong> {{ query_stat.duration * 1000 }} ms
+{% endblock %}

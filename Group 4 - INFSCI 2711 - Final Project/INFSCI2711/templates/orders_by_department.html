@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Department by Number of Orders</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Department</th>
+            <th>Number of Orders</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders_by_department %}
+            <tr>
+            <td>{{ order.Department }}</td>
+            <td>{{ order.NumberOfOrders }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <strong>Execution Time:</strong> {{ query_stat.duration * 1000 }} ms
+{% endblock %}

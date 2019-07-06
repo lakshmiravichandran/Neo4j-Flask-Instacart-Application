@@ -1,0 +1,77 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-
+˓→fit=no">
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+        <title>INFSCI 2711 : Advance Database Management Systems</title>
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav mr-auto">
+        {{ render_nav_item('hello_world', 'Home') }}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Relational Database
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{ render_nav_item('order_by_department', 'Order By Department') }}
+                {{ render_nav_item('quantity_by_time_of_day', 'Quantity of Time of Day') }}
+                {{ render_nav_item('max_orders_by_user', 'Max Order By User') }}
+                {{ render_nav_item('products_by_day_of_week', 'Products by Day of Week') }}
+                {{ render_nav_item('product_quantity_by_aisle', 'Quantity of Asile') }}
+                {{ render_nav_item('product_top_twenty', 'Sale By Hour') }}
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Neo4j
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{ render_nav_item('neo4j_product_quantity_by_aisle', 'Top 20 Asile') }}
+                {{ render_nav_item('neo4j_order_by_department', 'Order By Department') }}
+                {{ render_nav_item('neo4j_max_orders_by_user', ' Top 10 Customers') }}
+                {{ render_nav_item('neo4j_quantity_by_time_of_day', 'Sale By Hour') }}
+                {{ render_nav_item('neo4j_products_by_day_of_week', 'Products bought by vegeterians') }}
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                MongoDB
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{ render_nav_item('mongo_order_by_dow', 'Orders by day of week') }}
+                {{ render_nav_item('mongo_product_quantity_by_aisle', 'Top 20 Aisles with Maximum Order By User') }}
+                {{ render_nav_item('mongo_orders_by_hour_of_day', 'Order By Hours') }}
+                {{ render_nav_item('mongo_top_users_order_max_product', 'Top 5 Users ordering maximum products') }}
+                {{ render_nav_item('mongo_top_products', 'Top 20 products') }}
+                {{ render_nav_item('mongo_order_department', 'Order by Department') }}
+            </div>
+        </li>
+    </div>
+</nav>
+<!-- Your page contont -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+{% endblock %}
+</body>
+</html>

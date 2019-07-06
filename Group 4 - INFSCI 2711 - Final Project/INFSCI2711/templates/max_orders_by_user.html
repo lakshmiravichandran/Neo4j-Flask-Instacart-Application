@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Top 5 Users by Order Quantity</h2>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user_quantity in max_orders_by_user %}
+            <tr>
+            <td>{{ user_quantity.UserId }}</td>
+            <td>{{ user_quantity.Quantity }}</td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <strong>Execution Time:</strong> {{ query_stat.duration * 1000 }} ms
+{% endblock %}
